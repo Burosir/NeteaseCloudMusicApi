@@ -8,6 +8,7 @@ module.exports = (query, request) => {
     msg: query.msg || '',
     type: 'song',
     userIds: '[' + query.user_ids + ']',
+    xhrFields: { withCredentials: true },
   }
   return request('POST', `https://music.163.com/api/msg/private/send`, data, {
     crypto: 'api',
